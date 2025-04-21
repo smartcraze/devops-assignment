@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+import uvicorn
 app = FastAPI()
 
 @app.get("/")
@@ -13,3 +13,8 @@ def read_item(item_id: int):
 @app.post("/items")
 def create_item(item_name: str):
     return {"item_name": item_name}
+
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
