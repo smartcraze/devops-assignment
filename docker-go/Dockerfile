@@ -1,11 +1,12 @@
-FROM golang:1.20-alpine
+FROM golang:1.22.2-alpine
+
 
 WORKDIR /app
 
 COPY . .
 
-RUN go build -o main .
+RUN go build -o server .
 
-EXPOSE 8080 
+EXPOSE 8080
 
-CMD ["./main"]
+CMD ["./server"]
